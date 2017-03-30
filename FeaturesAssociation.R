@@ -6,7 +6,8 @@
 # Finding association between clinical, pathological and molecular features of an infant cohort
 # Written by Dr Reza Rafiee
 # Research Associate, Northern Institute for Cancer Research, Newcastle University
-# This script gets a csv file including all variables for doing survival modelling analysis
+# This script gets a csv file including all variables for finding association between clinical, pathological
+# and molecular features of an infant MB cohort
 
 # Install all required packages as well as dependencies
 #install_all_packages_automatic(ellipse)
@@ -16,10 +17,6 @@
 library(corrgram)
 library(ellipse)
 library(corrplot)
-
-
-setwd("~/My Projects at NICR/2014/Infant/Our New Material")
-#library(survival)
 
 ## load data
 data1 <- read.csv("InfantCohort14Features.csv", header=T) # updated 2017, 
