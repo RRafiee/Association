@@ -9,15 +9,15 @@
 # This script gets a csv file including all variables for finding association 
 
 # Install all required packages as well as dependencies
-#install_all_packages_automatic(ellipse)
-#install_all_packages_automatic(corrgram)
+install_all_packages_automatic(ellipse)
+install_all_packages_automatic(corrgram)
 
 # Loading libraries
 library(corrgram)
 library(ellipse)
 library(corrplot)
 
-## load data
+## Load data
 data1 <- read.csv("InfantCohort14Features.csv", header=T) # updated 2017, 
 DataFeturesMat <- data1[,1:14]
 
@@ -61,7 +61,7 @@ for(i in 1:length(categories))
       if((i!=j) && (Flag1))
       {  
         ## Select categories and get rid of missing data
-        test <- cbind(data1[,categories[i]],data1[,categories[j]])   # Original is data, 13th October 2016
+        test <- cbind(data1[,categories[i]],data1[,categories[j]])   
         ## Get rid of missing data
         
         #test <- subset(test,test[,1]!=9) #Original
@@ -151,11 +151,10 @@ rownames(Corr_Mat_correctedBH) <- colnames(data1)
 
 for (ix in 1:nrow(data_sample_indexed))
 {
-  #ix <- 1
   ic1 <- as.integer(data_sample_indexed[ix,1])
   ic2 <- as.integer(data_sample_indexed[ix,2])
   Corr_Mat_correctedBH[ic1,ic2] <- data_sample_indexed[ix,5] # corrrected p-values: Benjamini.Hochberg
-  Corr_Mat_correctedBH[ic2,ic1] <- data_sample_indexed[ix,5] # corrrected p-values: Benjamini.Hochberg
+  Corr_Mat_correctedBH[ic2,ic1] <- data_sample_indexed[ix,5]  
 }
 
 Corr_Mat_correctedBH <- apply(Corr_Mat_correctedBH,1,as.numeric)
