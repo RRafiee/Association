@@ -6,8 +6,7 @@
 # Finding association between clinical, pathological and molecular features of an infant cohort
 # Written by Dr Reza Rafiee
 # Research Associate, Northern Institute for Cancer Research, Newcastle University
-# This script gets a csv file including all variables for finding association between clinical, pathological
-# and molecular features of an infant MB cohort
+# This script gets a csv file including all variables for finding association 
 
 # Install all required packages as well as dependencies
 #install_all_packages_automatic(ellipse)
@@ -146,7 +145,7 @@ colnames(data_sample_indexed) <- c("category1","category2","Uncorrected_pvalues"
 
 
 Corr_Mat_correctedBH <- matrix(nrow=14, ncol=14,"")
-colnames(Corr_Mat_correctedBH) <- colnames(data1) # c("male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
+colnames(Corr_Mat_correctedBH) <- colnames(data1) # c("Male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
 rownames(Corr_Mat_correctedBH) <- colnames(data1) 
 
 
@@ -161,8 +160,8 @@ for (ix in 1:nrow(data_sample_indexed))
 
 Corr_Mat_correctedBH <- apply(Corr_Mat_correctedBH,1,as.numeric)
 
-colnames(Corr_Mat_correctedBH) <- colnames(data1) #c("male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
-rownames(Corr_Mat_correctedBH) <- colnames(data1) #c("male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
+colnames(Corr_Mat_correctedBH) <- colnames(data1) #c("Male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
+rownames(Corr_Mat_correctedBH) <- colnames(data1) #c("Male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
 
 sample_data1 <- Corr_Mat_correctedBH
 
