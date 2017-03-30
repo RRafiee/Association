@@ -169,7 +169,11 @@ sample_data1[sample_data1 > 0.05 ] <- 1
 
 par(mfrow=c(1,1))
 corrgram(sample_data1,lower.panel=panel.shade, upper.panel=NULL,col.regions=colorRampPalette(c("black","darkgreen","grey")))
-plotcorr(sample_data1, col = colorRampPalette(c("white", "navy"))(100))
+
+# plotcorr(sample_data1, col = colorRampPalette(c("white", "navy"))(100))
+plotcorr(sample_data1, outline = TRUE, col = 'red', numbers = FALSE,type = "lower",
+       xlab = "Association between molecular, clinical and pathology features", ylab = "",
+       cex = 0.75*par("cex"), mar = 0.1 + c(2,2,4,2), bty = "n")
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # End
