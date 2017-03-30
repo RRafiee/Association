@@ -167,7 +167,6 @@ sample_data1 <- Corr_Mat_correctedBH
 colnames(Corr_Mat_correctedBH) <- colnames(data1)
 rownames(Corr_Mat_correctedBH) <- colnames(data1)
 
-#sample_data1 <- replace(sample_data1, )
 sample_data1[sample_data1 > 0.05 ] <- 1
 
 par(mfrow=c(1,1))
