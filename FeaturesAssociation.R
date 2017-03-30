@@ -6,7 +6,8 @@
 # Finding association between clinical, pathological and molecular features of an infant cohort
 # Written by Dr Reza Rafiee
 # Research Associate, Northern Institute for Cancer Research, Newcastle University
-# This script gets a csv file including all variables for finding association 
+# This script gets a csv file including all variables (n=14) for finding association using Fisher or
+# Chi-squared test 
 
 # Install all required packages as well as dependencies
 install_all_packages_automatic(ellipse)
@@ -42,10 +43,7 @@ for(i in 1:length(categories))
     j <- i+1
     while (j <= length(categories))
      {
-      
-      ## Check that i doesn't equal j and Removing non-Meaningfull comparsion (By Reza, 14 May 2014)
-      
-      
+      # Check that i doesn't equal j and Removing non-meaningfull comparsion (for subgroup and pathology)
       Flag1 <-  ifelse((i==4&&j==5),F,ifelse((i==5&&j==4),F,      # DN_MBEN(col. 1), CLA (col. 2), LCA(in col.3)
                 ifelse((i==4&&j==6),F,ifelse((i==6&&j==4),F,
                 ifelse((i==5&&j==6),F,ifelse((i==6&&j==5),F,
@@ -57,19 +55,14 @@ for(i in 1:length(categories))
                 ifelse((i==8&&j==10),F,ifelse((i==10&&j==8),F,
                 ifelse((i==9&&j==10),F,ifelse((i==10&&j==9),F,T))))))))))))))))))
       
-
       if((i!=j) && (Flag1))
       {  
         ## Select categories and get rid of missing data
         test <- cbind(data1[,categories[i]],data1[,categories[j]])   
+        
         ## Get rid of missing data
-        
-        #test <- subset(test,test[,1]!=9) #Original
-        #test <- subset(test,test[,2]!=9) #Original
-        
         test <- subset(test,test[,1]!="NA")
         test <- subset(test,test[,2]!="NA")
-        
         
         ## Check if either column has a single category and ignore if
         ## that is the case
@@ -125,6 +118,9 @@ colnames (results_Total_1) <- c("category1","category2","tests","Uncorrected_pva
 filename_association <- paste("FeatureAssociationAnalysisInfant.csv")
 write.csv(results_Total_1, file=filename_association)
 
+# Changing the feature names into the numbers (1,2, ..., 14),
+# for example: "Male" in the category1 and category2 columns are replaced by 1 
+# "GTR" is replaced by 2 and so on. 
 
 data_sample_indexed <- as.matrix(results_Total_1)
 data_sample_indexed <- data_sample_indexed[,-3]  # remove column test (Fisher)
