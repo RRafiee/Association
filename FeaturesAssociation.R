@@ -158,7 +158,7 @@ Corr_Mat_correctedBH <- apply(Corr_Mat_correctedBH,1,as.numeric)
 colnames(Corr_Mat_correctedBH) <- colnames(data1) #c("Male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
 rownames(Corr_Mat_correctedBH) <- colnames(data1) #c("Male","TRvsNotTR","MStage2plus","DN_MBEN","Classic","LCA","SHH","G3","G4","G3/G4","P53.IHC","MYCamp","MYCNamp","iso17q")
 
-# Saving obtained corrected p-values (BH) as scv table 
+# Saving obtained corrected p-values (BH) of association as the csv table 
 write.table(Corr_Mat_correctedBH, file="Association_pvalues_BH.csv", sep="\t")
 sample_data1 <- Corr_Mat_correctedBH
 
