@@ -9,8 +9,8 @@
 # This script gets a csv file including all variables for finding association using Fisher or chi-squared test
 
 # Install all required packages as well as dependencies
-#install_all_packages_automatic(ellipse)
-#install_all_packages_automatic(corrgram)
+# install_all_packages_automatic(ellipse)
+# install_all_packages_automatic(corrgram)
 
 # Loading libraries
 library(corrgram)
