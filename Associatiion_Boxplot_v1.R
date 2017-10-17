@@ -23,6 +23,9 @@ bwplot(value~Label | paste0(variable), data=dat.m,   main=maintext, layout=c(1,1
 t.test(value ~ Label, data = dat.m)
 #as.character(dataset$Label) #levels of the factor 
 
+# Use the follwoing useful link for more colorful box plots
+http://shiny.chemgrid.org/boxplotr/
+
 # ##################################################################################################
 # #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # # End
